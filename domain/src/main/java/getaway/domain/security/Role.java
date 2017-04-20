@@ -7,23 +7,24 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import getaway.domain.enums.UserRoleEnum;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Role {
 
-	private String role;
+	private UserRoleEnum role;
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable
 	private List<User> users = new ArrayList<>();
 
-	public String getRole() {
+	public UserRoleEnum getRole() {
 		return role;
 	}
 
-	public void setRole(String role) {
+	public void setRole(UserRoleEnum role) {
 		this.role = role;
 	}
 
