@@ -1,12 +1,6 @@
 package getaway.domain;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
-import javax.persistence.Version;
+import javax.persistence.*;
 
 import java.util.Date;
 
@@ -14,8 +8,8 @@ import java.util.Date;
 public class AbstractDomainClass implements DomainObject {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private Integer id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
 	@Version
 	private Integer version;
@@ -24,12 +18,12 @@ public class AbstractDomainClass implements DomainObject {
 	private Date updatedDate;
 
 	@Override
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
 	@Override
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
