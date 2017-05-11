@@ -1,19 +1,17 @@
 package getaway.domain.security;
 
+import javax.persistence.*;
+
+import getaway.domain.AbstractDomainClass;
 import getaway.domain.User;
-
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-
 import getaway.domain.enums.UserRoleEnum;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Role {
+public class Role extends AbstractDomainClass {
 
+	@Enumerated(EnumType.STRING)
 	private UserRoleEnum role;
 
 	@ManyToMany(fetch = FetchType.EAGER)
