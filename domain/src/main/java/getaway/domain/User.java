@@ -1,9 +1,8 @@
 package getaway.domain;
 
-import getaway.domain.security.Role;
-
 import javax.persistence.*;
 
+import getaway.domain.security.Role;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +17,6 @@ public class User extends AbstractDomainClass {
 	private String encryptedPassword;
 	private Boolean enabled = true;
 
-
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable
 	private List<Role> roles = new ArrayList<>();
@@ -29,6 +27,14 @@ public class User extends AbstractDomainClass {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getEncryptedPassword() {
