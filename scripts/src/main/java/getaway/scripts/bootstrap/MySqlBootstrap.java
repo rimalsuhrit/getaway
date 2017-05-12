@@ -23,8 +23,8 @@ import java.util.List;
 @EntityScan(basePackages = {"getaway.domain"})
 @ComponentScan(basePackages = {"getaway.persistence.services.reposervices"})
 public class MySqlBootstrap implements CommandLineRunner{
-	private UserService userService;
 	private RoleService roleService;
+	private UserService userService;
 
 	@Autowired
 	public void setUserService(UserService userService) {
@@ -54,6 +54,7 @@ public class MySqlBootstrap implements CommandLineRunner{
 		superAdminUser.setId(1L);
 		superAdminUser.setEnabled(true);
 		superAdminUser.setUsername("suhrit+superadmin@g8away.com");
+		superAdminUser.setPassword("password");
 		superAdminUser.setRoles(allRoles);
 		userService.saveOrUpdate(superAdminUser);
 
@@ -63,6 +64,7 @@ public class MySqlBootstrap implements CommandLineRunner{
 		adminUser.setId(2L);
 		adminUser.setEnabled(true);
 		adminUser.setUsername("suhrit+superadmin@g8away.com");
+		adminUser.setPassword("password");
 		adminUser.setRoles(adminRoles);
 		userService.saveOrUpdate(adminUser);
 	}
