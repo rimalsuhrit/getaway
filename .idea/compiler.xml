@@ -17,6 +17,7 @@
       <module name="getaway" target="1.8" />
       <module name="persistence" target="1.8" />
       <module name="scripts" target="1.8" />
+      <module name="security" target="1.8" />
       <module name="web-admin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
