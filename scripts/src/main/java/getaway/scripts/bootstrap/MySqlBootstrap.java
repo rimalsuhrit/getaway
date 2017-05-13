@@ -63,7 +63,7 @@ public class MySqlBootstrap implements CommandLineRunner{
 		User adminUser = new User();
 		adminUser.setId(2L);
 		adminUser.setEnabled(true);
-		adminUser.setUsername("suhrit+superadmin@g8away.com");
+		adminUser.setUsername("suhrit+admin@g8away.com");
 		adminUser.setPassword("password");
 		adminUser.setRoles(adminRoles);
 		userService.saveOrUpdate(adminUser);
