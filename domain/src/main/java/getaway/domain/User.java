@@ -9,6 +9,7 @@ import java.util.List;
 @Entity
 public class User extends AbstractDomainClass {
 
+	@Column(unique = true)
 	private String username;
 
 	@Transient
