@@ -6,7 +6,6 @@ import static java.util.stream.Collectors.toList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -18,7 +17,6 @@ import getaway.persistence.services.RoleService;
 import getaway.persistence.services.UserService;
 import java.util.List;
 
-@SpringBootApplication
 @EnableJpaRepositories(basePackages = {"getaway.persistence.repositories"})
 @EntityScan(basePackages = {"getaway.domain"})
 @ComponentScan(basePackages = {"getaway.persistence.services.reposervices"})
@@ -54,6 +52,8 @@ public class MySqlBootstrap implements CommandLineRunner{
 		superAdminUser.setId(1L);
 		superAdminUser.setEnabled(true);
 		superAdminUser.setUsername("suhrit+superadmin@g8away.com");
+		superAdminUser.setFirstName("Suhrit");
+		superAdminUser.setLastName("Rimal");
 		superAdminUser.setPassword("password");
 		superAdminUser.setRoles(allRoles);
 		userService.saveOrUpdate(superAdminUser);
@@ -63,7 +63,9 @@ public class MySqlBootstrap implements CommandLineRunner{
 		User adminUser = new User();
 		adminUser.setId(2L);
 		adminUser.setEnabled(true);
-		adminUser.setUsername("suhrit+admin@g8away.com");
+		adminUser.setUsername("prakriti+admin@g8away.com");
+		adminUser.setFirstName("Prakriti");
+		adminUser.setLastName("Gautam");
 		adminUser.setPassword("password");
 		adminUser.setRoles(adminRoles);
 		userService.saveOrUpdate(adminUser);
