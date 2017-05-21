@@ -9,6 +9,8 @@
 	<modules>
 		<module>domain</module>
 		<module>persistence</module>
+		<module>nosql-domain</module>
+		<module>nosql-persistence</module>
 		<module>scripts</module>
 		<module>web-admin</module>
 	</modules>
